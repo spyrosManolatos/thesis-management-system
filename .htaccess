@@ -1,0 +1,33 @@
+# Error document configuration
+ErrorDocument 404 /dipl_project/views/error/404.html
+
+# Enable browser caching for static assets
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js)$">
+    Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+    Header set ETag "W/\"%{UNIQUE_ID}e\""
+</FilesMatch>
+
+# Set environment variables for different API types
+SetEnvIf REQUEST_URI "^/dipl_project/api/public_endpoint/get_committee_members\.php$" cacheable_api
+SetEnvIf REQUEST_URI "^/dipl_project/api/public_endpoint/get_announcements.php$" strictly_cacheable_api
+SetEnvIf REQUEST_URI "^/dipl_project/api/.*\.php$" api_endpoint
+SetEnvIf REQUEST_URI "^/dipl_project/api/public_endpoint/get_committee_members\.php$" !api_endpoint
+
+
+
+
+# Headers for regular API endpoints (no caching)
+Header set Cache-Control "no-store" env=api_endpoint
+Header set Expires "0" env=api_endpoint
+
+# Headers for cacheable API endpoint (1 week cache, allow stale while revalidating)
+Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400" env=cacheable_api
+Header set Expires "access plus 1 week" env=cacheable_api
+Header set ETag "W/\"%{UNIQUE_ID}e\"" env=cacheable_api
+
+# Headers for strictly cacheable API endpoint (2 minutes cache)
+Header set Cache-Control "public, max-age=120" env=strictly_cacheable_api
+Header set Expires "access plus 2 minutes" env=strictly_cacheable_api
+Header set ETag "W/\"%{UNIQUE_ID}e\"" env=strictly_cacheable_api
+
+

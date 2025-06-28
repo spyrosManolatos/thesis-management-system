@@ -1,0 +1,94 @@
+/* Στυλ για το κουμπί αποσύνδεσης */
+.logout-btn {
+	border-radius: 8px; !important;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Στυλ όταν περνάς το ποντίκι πάνω από το κουμπί αποσύνδεσης */
+.logout-btn:hover {
+    background-color: #e03e3e; /* Αντί για το κόκκινο, πιο έντονο κόκκινο */
+    color: white;
+}
+
+/* Προσθήκη γραμμής από κάτω στην αρχική μπάρα */
+.welcome-message {
+    border-bottom: 2px solid #ccc; /* Λεπτή γραμμή κάτω από την μπάρα */
+    padding-bottom: 15px;
+}
+
+/* Εξωτερικό στυλ για το Navbar */
+.navbar {
+    border-radius: 8px; /* Στρογγυλεμένες γωνίες */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ελαφριά σκιά για πιο κομψή εμφάνιση */
+}
+
+/* Στυλ για τα items του μενού */
+.navbar-nav .nav-item {
+    margin-left: 25px; /* Απόσταση μεταξύ των items του μενού */
+}
+
+/* Στυλ για τα items του μενού (με λίγο περισσότερο χώρο μεταξύ τους) */
+.navbar-nav .nav-item .nav-link {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 10px 15px; /* Αυξάνουμε το padding για μεγαλύτερο διάστημα γύρω από τα items */
+    margin-right: 20px; /* Ενισχύουμε το διάστημα ανάμεσα στα items */
+    border-radius: 8px; /* Στρογγυλεμένες γωνίες στα items */
+    transition: background-color 0.3s ease; /* Ομαλή μετάβαση χρώματος όταν το hover */
+}
+
+/* Στυλ όταν το item του μενού έχει hover */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #fff;
+    background-color: #007bff; /* Χρωματισμός στο hover */
+}
+
+/* Στυλ για το περιεχόμενο */
+#content-area {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Αν η οθόνη είναι μικρή, κάνουμε το navbar responsive */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin-left: 0; /* Επαναφορά της απόστασης για μικρές οθόνες */
+        margin-bottom: 10px; /* Κάθε item θα έχει απόσταση από το επόμενο */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Μικρότερη γραμματοσειρά στις μικρές οθόνες */
+    }
+}
+.thesis-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+}
+
+.view-details-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #0b5ed7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.view-details-btn:hover {
+    background-color: #084298;
+}
